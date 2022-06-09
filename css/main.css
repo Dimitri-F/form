@@ -1,0 +1,191 @@
+/*RESET*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label,input, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/********************************************************************************
+                                STYLE DE LA PAGE
+********************************************************************************/
+:root {
+    --main-color: #F0A500;
+    --second-color: #CF7500;
+    --white: #F4F4F4;
+    --black: #1A1C20;
+    --main-font: 'Mina', sans-serif;
+    --display-font: 'Gugi', cursive;
+    --shadow: 0 2px 8px rgba(0,0,0,0.26);
+}
+body {
+    background-color: var(--white);
+    font-family: var(--main-font);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+/********************************************************************************
+                                STYLE FOOTER
+********************************************************************************/
+.contact-title {
+    margin-bottom: 15%
+}
+.contact__content {
+    color: var(--black);
+    display: flex;
+    height: 100vh;
+    min-height: 500px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/********************************************************************************
+                                STYLE FORMULAIRE
+********************************************************************************/
+.form-hr {
+    border: 1px solid var(--main-color);
+    width : 20%;
+}
+.email-form {
+    padding: 10px 20px;
+    border: 1px solid black;
+    margin: 0 20px;
+    width: 100%;
+    max-width: 480px;
+    border-radius: 7px;
+}
+.email-form > * {
+    display: block;
+    margin: 7% auto;
+}
+.email-form {
+    background: var(--white);
+    box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+    border-radius: 7px;
+    max-width: 480px;
+    margin: 5% auto;
+    padding: 10px 20px;
+    border-top: 5px solid #ebebeb;
+    border-bottom: 5px solid #ebebeb;
+}
+::-webkit-input-placeholder {
+    font-size: 1.3em;
+}
+.form-title {
+    display: block;
+    margin: 8% auto;
+    text-align: center;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    background-color: var(--main-color);
+    padding:  3% 2%;
+    color: var(--white);
+    width: 85%;
+    border-radius: 7px;
+    font-weight: bold
+}
+label {
+    text-transform: uppercase;
+}
+.email-form__text {
+    background-color: #ebebeb;
+    width: 80%;
+    padding: 10px;
+    margin: auto;
+    border-radius: 7px;
+}
+.email-form__text:hover {
+    border-bottom: 5px solid var(--black);
+    transition: .2s ease-in-out;
+}
+.email-form__text:focus {
+    background-color: var(--white);
+    border-bottom: 5px solid var(--main-color);
+    transition: .2s ease-in-out;
+}
+.email-form__textarea {
+    background-color: #ebebeb;
+    overflow: hidden;
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    height: 120px;
+    resize: none;
+    border-radius: 7px;
+}
+.email-form__textarea:hover {
+    border-bottom: 5px solid var(--black);
+    transition: .2s ease-in-out;
+}
+.email-form__textarea:focus {
+    background-color: white;
+    border-bottom: 5px solid var(--main-color);
+    transition: .2s ease-in-out;
+}
+.span--color {
+    color: #0026ff
+}
+.comments {
+    color: #ff0000
+}
+.thank-you {
+    color: olivedrab;
+}
+.form-note {
+    margin: 5%;
+    text-align: center
+}
+.email-form__submit {
+    width: 200px;
+    color: white;
+    background-color: var(--main-color);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border-radius: 7px;
+    margin: 2% auto;
+    padding: 2%;  
+}
+.email-form__submit:hover {
+    box-shadow: 15px 15px 15px 5px rgba(78, 72, 77, 0.219);
+    border-top: 5px solid var(--black);
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}

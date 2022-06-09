@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset= "UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Formulaire</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Mina&display=swap" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet" />
+</head>
+
+<body>
+
+
+    <form id="contact-form" class="email-form" autocomplete="off">
+        <p class="form-title">Envoyez-moi un email </p>
+        <hr class="form-hr" />
+        <p class="form-note">En remplissant ce petit formulaire, un email me sera automatiquement envoyé</p>
+        <label for="name">Nom <span class="span--color">*</span></label>
+        <input id="name" type="text" name="name" class="email-form__text" />
+        <p class="comments"></p>
+        <label for="email">Email <span class="span--color">*</span></label>
+        <input id="email" type="text" name="email" class="email-form__text" />
+        <p class="comments"></p>
+        <label for="message">Message <span class="span--color">*</span></label>
+        <textarea id="message" name="message" class="email-form__textarea"></textarea>
+        <p class="comments"></p>
+        <p class="form-note span--color">* Tous les champs doivent être remplis.</p>
+        
+        <button type="submit" class="email-form__submit">Envoyer</button>
+    </form>
+
+       
+    
+    <!--SCRIPT JS----------------------------------------------------------->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
