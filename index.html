@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset= "UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Formulaire</title>
+    <title>Form</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Mina&display=swap" rel="stylesheet">
@@ -15,10 +15,9 @@
 
 
     <form id="contact-form" class="email-form" autocomplete="off">
-        <p class="form-title">Envoyez-moi un email </p>
-        <hr class="form-hr" />
-        <p class="form-note">En remplissant ce petit formulaire, un email me sera automatiquement envoyé</p>
-        <label for="name">Nom <span class="span--color">*</span></label>
+        <h1 class="form-title">Send me an email </h1>
+        <p class="form-note">By filling this small form, an email will be automatically sent to me</p>
+        <label for="name">Last name <span class="span--color">*</span></label>
         <input id="name" type="text" name="name" class="email-form__text" />
         <p class="comments"></p>
         <label for="email">Email <span class="span--color">*</span></label>
@@ -27,9 +26,9 @@
         <label for="message">Message <span class="span--color">*</span></label>
         <textarea id="message" name="message" class="email-form__textarea"></textarea>
         <p class="comments"></p>
-        <p class="form-note span--color">* Tous les champs doivent être remplis.</p>
+        <p class="form-note span--color">* All fields must be completed.</p>
         
-        <button type="submit" class="email-form__submit">Envoyer</button>
+        <a id="submit" class="email-form__submit">Send</a>
     </form>
 
        
