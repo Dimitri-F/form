@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset= "UTF-8" />
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Form</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,29 +13,24 @@
 
 <body>
 
-
     <form id="contact-form" class="email-form" autocomplete="off">
-        <h1 class="form-title">Send me an email </h1>
-        <p class="form-note">By filling this small form, an email will be automatically sent to me</p>
+        <h1 class="email-form__title">Send me an email </h1>
+        <p class="email-form__note">By filling this small form, an email will be automatically sent to me</p>
         <label for="name">Last name <span class="span--color">*</span></label>
-        <input id="name" type="text" name="name" class="email-form__text" />
+        <input id="name" type="text" name="name" class="email-form__text" placeholder="Your name"/>
         <p class="comments"></p>
         <label for="email">Email <span class="span--color">*</span></label>
-        <input id="email" type="text" name="email" class="email-form__text" />
+        <input id="email" type="text" name="email" class="email-form__text" placeholder="Your email adress"/>
         <p class="comments"></p>
         <label for="message">Message <span class="span--color">*</span></label>
-        <textarea id="message" name="message" class="email-form__textarea"></textarea>
+        <textarea id="message" name="message" class="email-form__textarea" placeholder="Your message"></textarea>
         <p class="comments"></p>
         <p class="form-note span--color">* All fields must be completed.</p>
-        
-        <a id="submit" class="email-form__submit">Send</a>
+
+        <a id="submit" class="email-form__button">Send</a>
     </form>
 
-       
-    
-    <!--SCRIPT JS----------------------------------------------------------->
-    <script src="js/script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
