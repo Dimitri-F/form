@@ -9,3 +9,5 @@ Management of a Google recaptcha with Javascript which blocks the processing of 
 If you test the site locally, refresh the page manually if nothing happens.
 
 Pay attention to the comments in the code to specify your personal information.
+* PHP file: line 14 and line 30.
+* index.php file: line 35, line 38, line 84 and line 85. 
