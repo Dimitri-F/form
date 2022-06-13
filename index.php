@@ -35,7 +35,7 @@
     <script src="https://www.google.com/recaptcha/api.js?render=your site key here"></script>
     <script>
         grecaptcha.ready(function() {
-            grecaptcha.execute('your site key here', { action: 'homepage' }).then(function (token) {
+            grecaptcha.execute('your_site_key_here', { action: 'homepage' }).then(function (token) {
                 document.getElementById("recaptchaResponse").value = token;
             });
         });
