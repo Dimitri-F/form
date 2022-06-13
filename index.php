@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Mina&display=swap" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet" />
+    <link href="main.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -26,10 +26,20 @@
         <textarea id="message" name="message" class="email-form__textarea" placeholder="Your message"></textarea>
         <p class="comments"></p>
         <p class="form-note span--color">* All fields must be completed.</p>
-
-        <a id="submit" class="email-form__button">Send</a>
+        <input type="hidden" id="recaptchaResponse" name="recaptcha-response"/>
+        <button type="submit" class="email-form__button">Send</button>
     </form>
-
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--SCRIPT ReCaptcha----------------------------------------------------------->
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lc5h2cgAAAAAM5dQ6EOZwdpj_gl6Vk8uKRTdOT6"></script>
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6Lc5h2cgAAAAAM5dQ6EOZwdpj_gl6Vk8uKRTdOT6', { action: 'homepage' }).then(function (token) {
+                document.getElementById("recaptchaResponse").value = token;
+            });
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 

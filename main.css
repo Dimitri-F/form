@@ -138,7 +138,7 @@ label>.span--color {
 }
 
 .email-form__button {
-    text-align: center;
+    outline: none;
     width: 200px;
     color: var(--main-color);
     background-color: var(--white);
@@ -147,7 +147,7 @@ label>.span--color {
     margin: 4% auto;
     padding: 1%;
     box-shadow: var(--shadow);
-    border-radius: 2px;
+    border-radius: 7px;
 }
 
 .email-form__button:hover {
