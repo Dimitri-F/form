@@ -31,11 +31,11 @@
     </form>
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!--SCRIPT ReCaptcha----------------------------------------------------------->
-    <script src="https://www.google.com/recaptcha/api.js?render=6Lc5h2cgAAAAAM5dQ6EOZwdpj_gl6Vk8uKRTdOT6"></script>
+    <!--SCRIPT ReCaptcha--- don't forget to put your recaptcha site key in the script declaration but also in the function below.-------------------------------------------------------->
+    <script src="https://www.google.com/recaptcha/api.js?render=your site key here"></script>
     <script>
         grecaptcha.ready(function() {
-            grecaptcha.execute('6Lc5h2cgAAAAAM5dQ6EOZwdpj_gl6Vk8uKRTdOT6', { action: 'homepage' }).then(function (token) {
+            grecaptcha.execute('your site key here', { action: 'homepage' }).then(function (token) {
                 document.getElementById("recaptchaResponse").value = token;
             });
         });

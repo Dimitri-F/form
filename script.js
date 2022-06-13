@@ -13,7 +13,7 @@ jQuery(document).ready(function () {
             success: function (json) {
                 //if the request is successful
                 if (json.isSuccess) {
-                    $('#contact-form').append("<p class='thank-you'>Votre message a bien été envoyé. Merci de m'avoir contacté :)</p>");
+                    $('#contact-form').append("<p class='thank-you'>Your message has been sent. Thank you for contacting me :)</p>");
                     $('#contact-form')[0].reset();
                 } else {
                     $('#name + .comments').html(json.nameError);

@@ -117,7 +117,7 @@ label {
 }
 
 .span--color {
-    color: darkblue
+    color: blue
 }
 
 label>.span--color {
@@ -125,11 +125,11 @@ label>.span--color {
 }
 
 .comments {
-    color: darkred;
+    color: red;
 }
 
 .thank-you {
-    color: darkgreen;
+    color: green;
 }
 
 .email-form__note {

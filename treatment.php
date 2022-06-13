@@ -1,21 +1,24 @@
 <?php
+//configuration for using php Mailer
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 require './phpMailer/Exception.php';
 require './phpMailer/PHPMailer.php';
 require './phpMailer/SMTP.php';
+//we initialize a php Mailer object for the future mail to send
 $mail = new PHPMailer(true);
-// we create an object here, with all the answers
+// we create an object JSON here, with all the answers
 $formJson = array("name" => "", "email" => "", "message" => "", "nameError" => "", "emailError" => "", "messageError" => "", "isSuccess" => false);
 //the address that will receive the emails
-$emailTo = "dimitri.fonsat@gmail.com";
+$emailTo = "your email address";
 //we define a constant for the redirection in case of captcha failure
 define('INDEX', 'index.php');
 //we check if the POST method is used
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //we check if "recaptchaResponse" contains a value
     if(empty($_POST['recaptcha-response'])){
+        //we refresh the page if the captcha input is empty
         $host  = $_SERVER['HTTP_HOST'];
         $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
         $extra = INDEX;
@@ -23,7 +26,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         exit;
     }else{
         //we prepare the url for the captcha response
-        $url = "https://www.google.com/recaptcha/api/siteverify?secret=6Lc5h2cgAAAAAKGoBDtPHlcibokr7wf4HgQ8WbNi&response={$_POST['recaptcha-response']}";
+        // don't forget to replace "put your secret key here" in the following url
+        $url = "https://www.google.com/recaptcha/api/siteverify?secret=your secret key here&response={$_POST['recaptcha-response']}";
         $response = file_get_contents($url);
         //we check that we have an answer to the captcha
         if(empty($response) || is_null($response)){
@@ -34,10 +38,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             header("Location: http://$host$uri/$extra");
             exit;
         }else{
+            //we decode the response of the captcha which is a JSON object
             $data = json_decode($response);
-            if($data->success){
+            if($data->success){//if the captcha answer is correct
         // cleaning data from form inputs
-        $formJson["name"] = test_input($_POST["name"]);// data cleaning
+        $formJson["name"] = test_input($_POST["name"]);
         $formJson["email"] = test_input($_POST["email"]);
         $formJson["message"] = test_input($_POST["message"]);
         $formJson["isSuccess"] = true;
@@ -72,11 +77,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if($formJson["isSuccess"]) {
             try{
                 //we initialize the parameters for sending the email
+                //refer to your web host for an online publication
                 //$mail->SMTPDebug = SMTP::DEBUG_SERVER; //Remove the comment if you want to have info about SMTP process
                 //SMTP
                 $mail->isSMTP();
-                $mail->Host = "localhost";
-                $mail->Port = 1025;
+                $mail->Host = "";//modify with the configuration of your web host, set "localhost" for use on a local server
+                $mail->Port =    //SMTP port number of your web host
                 //encoding
                 $mail->Charset = "utf-8";
                 //receiver
@@ -84,12 +90,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 //sender
                 $mail->setFrom(($formJson['email']));
                 //Content
-                $mail->Subject = "Mail de contact: " . ($formJson["name"]);
+                $mail->Subject = "Contact email: " . ($formJson["name"]);
                 $mail->Body = ($formJson['message']);
                 //Mail sending
                 $mail->Send();
             }catch(Exception $e){
-                echo "Message non envoyé. Erreur: {$mail->ErrorInfo}";
+                echo "Message not sent. Error: {$mail->ErrorInfo}";
                 exit(json_encode($formJson));
             }
         }
@@ -110,8 +116,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 }else{
     //If it is not the "POST" method that is used
     http_response_code(405);
-    echo 'Méthode non autorisée';
+    echo 'Unauthorized method';
 }
+
 function isEmail($email)
 {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
