@@ -12,4 +12,4 @@ Faites attention aux commentaires dans le code pour préciser vos informations p
 * Fichier PHP : ligne 14 et ligne 30.
 * Fichier index.php : ligne 35, ligne 38, ligne 84 et ligne 85. 
 
-Traduit avec www.DeepL.com/Translator (version gratuite)
+
