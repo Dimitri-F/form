@@ -1,13 +1,15 @@
 
-# Form component 
+# Composant de formulaire 
 
 
 
-This is a form with AJAX request processing coded in JQuery.
-The processing of inputs is in PHP.
-Management of a Google recaptcha with Javascript which blocks the processing of form if the activity of the site is suspicious (robots).
-If you test the site locally, refresh the page manually if nothing happens.
+Il s'agit d'un formulaire avec traitement des demandes AJAX codé en JQuery.
+Le traitement des entrées est en PHP.
+Gestion d'un recaptcha Google en Javascript qui bloque le traitement du formulaire si l'activité du site est suspecte (robots).
+Si vous testez le site en local, rafraîchissez la page manuellement si rien ne se passe.
 
-Pay attention to the comments in the code to specify your personal information.
-* PHP file: line 14 and line 30.
-* index.php file: line 35, line 38, line 84 and line 85. 
+Faites attention aux commentaires dans le code pour préciser vos informations personnelles.
+* Fichier PHP : ligne 14 et ligne 30.
+* Fichier index.php : ligne 35, ligne 38, ligne 84 et ligne 85. 
+
+Traduit avec www.DeepL.com/Translator (version gratuite)
